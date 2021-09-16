@@ -1,0 +1,24 @@
+.navBar{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: black;
+  &__container{
+    margin: 0 20px 0 0;
+    &_menu{
+      display: flex;
+      padding: 0;
+
+      & li{
+        list-style: none;
+        color: #FFFFFF;
+        margin: 10px;
+        font-size: 20px;
+        &:not(:last-child){
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}

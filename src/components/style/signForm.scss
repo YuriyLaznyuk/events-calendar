@@ -1,0 +1,29 @@
+.signForm{
+  position: relative;
+  background-color: #efefef;
+  width: 300px;
+  margin: 30px auto;
+  font-size: 18px;
+  &__cross{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    input{
+      margin: 10px auto;
+      cursor: pointer;
+      font-size: 22px;
+    }
+    input[placeholder]{
+      width: 80%;
+    }
+  }
+}
+
