@@ -1,21 +1,21 @@
 import React, { FC } from 'react';
-import './style/navBar.scss'
-import { useAppDispatch } from '../hooks/hooks';
-import { UserActionType } from '../store/reducers/user_reducer/type';
+import './style/navBar.scss';
+import { useActions } from '../hooks/useActions';
 
 const NavBar :FC = () => {
-  const dispatch=useAppDispatch();
+
+  const {modalVisibleIn,modalVisibleUp }=useActions();
   return (
     <div className='navBar'>
       <div className='navBar__container'>
         <ul className='navBar__container_menu'>
           <li onClick={()=>{
-            dispatch({type:UserActionType.MODAL_VISIBLE,payload:true});
-            dispatch({type:UserActionType.MODAL_UP,payload:true})
+            modalVisibleUp(true);
+
           }}>Sign up</li>
           <li onClick={()=>{
-            dispatch({type:UserActionType.MODAL_VISIBLE,payload:true});
-            dispatch({type:UserActionType.MODAL_IN,payload:true})
+            modalVisibleIn(true);
+
           }}
           >Sign in</li>
           <li>Sign out</li>

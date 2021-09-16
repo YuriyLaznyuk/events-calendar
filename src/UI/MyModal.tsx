@@ -1,7 +1,6 @@
 import React, { FC, PropsWithChildren, ReactElement } from 'react';
-import { useAppDispatch } from '../hooks/hooks';
-import { UserActionType } from '../store/reducers/user_reducer/type';
 import './style/myModal.scss';
+import { useActions } from '../hooks/useActions';
 
 interface MyModalProps {
   children1: ReactElement,
@@ -12,13 +11,12 @@ interface MyModalProps {
 }
 
 const MyModal: FC<MyModalProps> = (props: PropsWithChildren<MyModalProps>) => {
-  const dispatch = useAppDispatch();
+  const { modalVisible } = useActions();
   return (
     <div className='myModal'
-         style={{display:(props.modalVisible) ?'flex':'none'}} onClick={() => {
-      dispatch({ type: UserActionType.MODAL_VISIBLE, payload: false });
-      dispatch({ type: UserActionType.MODAL_UP, payload: false });
-      dispatch({ type: UserActionType.MODAL_IN, payload: false });
+         style={{ display: (props.modalVisible) ? 'flex' : 'none' }} onClick={() => {
+
+      modalVisible(false);
 
     }}>
       <div className="myModal__container"

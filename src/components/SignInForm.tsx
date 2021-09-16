@@ -1,15 +1,14 @@
 import React, { FC } from 'react';
-import './style/signForm.scss'
-import { useAppDispatch } from '../hooks/hooks';
-import { UserActionType } from '../store/reducers/user_reducer/type';
+import './style/signForm.scss';
+import { useActions } from '../hooks/useActions';
+
 const SignInForm :FC= () => {
-  const dispatch=useAppDispatch();
+  const {modalVisible}=useActions();
   return (
     <div className='signForm'>
       <span onClick={()=>{
-        dispatch({ type: UserActionType.MODAL_VISIBLE, payload: false });
-        dispatch({ type: UserActionType.MODAL_UP, payload: false });
-        dispatch({ type: UserActionType.MODAL_IN, payload: false });
+        modalVisible(false);
+
       }}
 
         className='signForm__cross'>&#10006;</span>
