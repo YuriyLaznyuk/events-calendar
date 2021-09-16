@@ -1,2 +1,8 @@
 h1{color:#00a4c3;text-align:center}body{margin:0;padding:0}
 
+.navBar{display:flex;justify-content:flex-end;align-items:center;background-color:black}.navBar__container{margin:0 20px 0 0}.navBar__container_menu{display:flex;padding:0}.navBar__container_menu li{list-style:none;color:#FFFFFF;margin:10px;font-size:20px}.navBar__container_menu li:not(:last-child){cursor:pointer}
+
+.myModal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;justify-content:center;align-items:center}.myModal__container{width:300px}
+
+.signForm{position:relative;background-color:#efefef;width:300px;margin:30px auto;font-size:18px}.signForm__cross{position:absolute;top:0;right:0;padding:10px;cursor:pointer}.signForm__form{display:flex;flex-direction:column;text-align:center}.signForm__form input{margin:10px auto;cursor:pointer;font-size:22px}.signForm__form input[placeholder]{width:80%}
+
