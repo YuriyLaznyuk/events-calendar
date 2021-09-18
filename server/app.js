@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static(path.resolve('dist')));
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html');
+  res.sendFile(path.resolve('dist','index.html'));
 });
 
 app.use(userRouters);
