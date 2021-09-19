@@ -22,10 +22,16 @@ export interface Set_User {
   payload:IUser
 }
 
+export interface Is_Auth {
+  type:UserActionType.IS_AUTH,
+  payload:boolean
+}
+
 export interface UserState {
   modalIn: boolean,
   modalUp: boolean,
   modalVisible: boolean,
+  isAuth:boolean,
   user: IUser
 
 }
@@ -35,7 +41,8 @@ export enum UserActionType {
   MODAL_IN = 'MODAL_IN',
   MODAL_UP = 'MODAL_UP',
   MODAL_VISIBLE = 'MODAL_VISIBLE',
-  SET_USER="SET_USER"
+  SET_USER="SET_USER",
+  IS_AUTH="IS_AUTH"
 
 }
 
@@ -43,4 +50,5 @@ export type UserAction=
   Modal_In |
   Modal_Up |
   Modal_Visible |
-  Set_User
+  Set_User |
+  Is_Auth

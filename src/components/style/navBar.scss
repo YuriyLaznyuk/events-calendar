@@ -1,22 +1,25 @@
-.navBar{
+.navBar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: black;
-  &__container{
+
+  &__container {
     margin: 0 20px 0 0;
-    &_menu{
+
+    &_menu {
       display: flex;
       padding: 0;
 
-      & li{
+      & li {
         list-style: none;
         color: #FFFFFF;
         margin: 10px;
         font-size: 20px;
-        &:not(:last-child){
-          cursor: pointer;
-        }
+        cursor: pointer;
+      }
+      & #user{
+        cursor: default;
       }
     }
   }

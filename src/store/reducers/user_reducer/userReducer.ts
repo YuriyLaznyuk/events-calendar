@@ -3,7 +3,8 @@ import { UserAction, UserActionType, UserState } from './type';
 
 const defaultState = {
   modalIn: false, modalUp: false,
-  user: {} as IUser, modalVisible: false
+  user: {} as IUser, modalVisible: false,
+  isAuth: false
 };
 
 
@@ -17,6 +18,8 @@ export function userReducer(state: UserState = defaultState, action: UserAction)
       return { ...state, modalVisible: action.payload };
     case UserActionType.SET_USER:
       return { ...state, user: action.payload };
+    case UserActionType.IS_AUTH:
+      return { ...state, isAuth: action.payload };
     default:
       return state;
   }

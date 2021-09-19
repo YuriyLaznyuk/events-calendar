@@ -3,5 +3,8 @@ module.exports = {
   user: [
     body('password').isLength({ min: 5 }),
     body('email').isEmail()
+  ],
+  event:[
+    body('email').isEmail()
   ]
 };

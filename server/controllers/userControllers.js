@@ -55,8 +55,9 @@ exports.loginUser = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY,
-      { expiresIn: 3000 });
+      { expiresIn: 180 });
     res.status(201).json({
+      message:'success',
       token,
       user: {
         name: user.name,
@@ -75,7 +76,7 @@ exports.authUser = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.id });
     const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY,
-      { expiresIn: 3000 });
+      { expiresIn: 180 });
     res.status(201).json({
       token,
       user: {
