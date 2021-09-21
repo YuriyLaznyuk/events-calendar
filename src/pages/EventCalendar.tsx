@@ -10,14 +10,14 @@ const EventCalendar: FC = () => {
   const [visible, setVisible] = useState(false);
   const { getEvents } = useActions();
   const { user } = useAppSelector(state => state.user);
-  const { events } = useAppSelector(state => state.event);
+  const { events,event } = useAppSelector(state => state.event);
 
 
   useEffect(() => {
     if (user.email) {
       getEvents(user.email);
     }
-  }, []);
+  }, [event]);
   const closeModal = () => {
     setVisible(false);
   };
