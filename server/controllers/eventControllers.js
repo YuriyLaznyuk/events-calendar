@@ -40,3 +40,19 @@ exports.getUserEvents = async (req, res) => {
     });
   }
 };
+
+exports.deleteEvents = async (req, res) => {
+  try {
+    await Event.findByIdAndDelete(req.body.id);
+    res.status(201).json({
+      status: 'success',
+      message: 'event delete'
+    });
+
+  } catch (e) {
+    res.status(404).json({
+      status: 'fail',
+      message: e.message
+    });
+  }
+};

@@ -9,6 +9,7 @@ const Login :FC= () => {
   return (
     <div>
       <h1>Page Login</h1>
+      <h1>Event Calendar</h1>
       <MyModal
         modalIn={modalIn}
         modalUp={modalUp}

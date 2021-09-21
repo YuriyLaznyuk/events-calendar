@@ -86,8 +86,8 @@ export const UserActionCreators = {
       alert(json.message);
       if (json.message === 'success') {
         localStorage.setItem('token', json.token);
-        dispatch({ type: UserActionType.IS_AUTH, payload: true });
         dispatch({ type: UserActionType.SET_USER, payload: json.user });
+        dispatch({ type: UserActionType.IS_AUTH, payload: true });
 
         dispatch({ type: UserActionType.MODAL_IN, payload: false });
         dispatch({ type: UserActionType.MODAL_VISIBLE, payload: false });

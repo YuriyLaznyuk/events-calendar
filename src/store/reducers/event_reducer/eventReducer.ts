@@ -2,7 +2,8 @@ import { EventAction, EventActionType, EventState } from './type';
 
 const defaultState: EventState = {
   guests: [],
-  events: []
+  events: [],
+  event: false
 };
 
 export function eventReducer(state = defaultState, action: EventAction): EventState {
@@ -11,6 +12,8 @@ export function eventReducer(state = defaultState, action: EventAction): EventSt
       return { ...state, events: action.payload };
     case EventActionType.SET_GUESTS:
       return { ...state, guests: action.payload };
+    case EventActionType.CHANGE_EVENT:
+      return { ...state, event: !state.event };
     default:
       return state;
   }

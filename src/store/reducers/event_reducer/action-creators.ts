@@ -1,13 +1,15 @@
 import { IUser } from '../../../models/IUser';
-import { EventActionType, SetEventAction, SetGuestAction } from './type';
+import { ChangeEventAction, EventActionType, SetEventAction, SetGuestAction } from './type';
 import { IEvent } from '../../../models/IEvent';
 import { AppDispatch } from '../../index';
+import { IEventRedux } from '../../../models/IEventRedux';
 
 const host: string = window.location.origin;
 export const EventActionCreators = {
 
   setGuests: (payload: IUser[]): SetGuestAction => ({ type: EventActionType.SET_GUESTS, payload }),
-  setEvents: (payload: IEvent[]): SetEventAction => ({ type: EventActionType.SET_EVENTS, payload }),
+  setEvents: (payload: IEventRedux[]): SetEventAction => ({ type: EventActionType.SET_EVENTS, payload }),
+  changeEvents: (): ChangeEventAction => ({ type: EventActionType.CHANGE_EVENT}),
 
   getEvents: (email: string) => async (dispatch: AppDispatch): Promise<void> => {
     try {

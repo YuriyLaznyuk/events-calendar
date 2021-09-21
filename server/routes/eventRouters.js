@@ -4,7 +4,8 @@ const validator=require('../middleware/validatorMiddleware');
 const eventControllers=require('../controllers/eventControllers')
 router.route('/api/event')
   .post(validator.event,eventControllers.createEvent)
-  .put(eventControllers.getUserEvents);
+  .put(eventControllers.getUserEvents)
+  .delete(eventControllers.deleteEvents);
 
 
 module.exports=router;

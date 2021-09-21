@@ -10,9 +10,9 @@ const NavBar: FC = () => {
     <div className='navBar'>
       <div className='navBar__container'>
         <ul className='navBar__container_menu'>
-          {!isAuth && <li onClick={() => modalVisibleUp(true)}>Sign up</li>}
-          {!isAuth && <li onClick={() => modalVisibleIn(true)}>Sign in</li>}
-          {isAuth && <li onClick={()=>logout()}>log out</li>}
+          {!isAuth && <li className='sign_log' onClick={() => modalVisibleUp(true)}>Sign up</li>}
+          {!isAuth && <li className='sign_log' onClick={() => modalVisibleIn(true)}>Sign in</li>}
+          {isAuth && <li className='sign_log' onClick={()=>logout()}>log out</li>}
           {isAuth && <li id='user'>{user.name}</li>}
         </ul>
       </div>

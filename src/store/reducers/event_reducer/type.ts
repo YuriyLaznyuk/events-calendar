@@ -1,14 +1,18 @@
 import { IUser } from '../../../models/IUser';
 import { IEvent } from '../../../models/IEvent';
+import { IEventRedux } from '../../../models/IEventRedux';
 
 export interface EventState {
   guests: IUser[],
-  events: IEvent[]
+  events: IEventRedux[],
+  event:boolean
 }
 
 export enum EventActionType {
   SET_GUESTS = 'SET_GUESTS',
-  SET_EVENTS = 'SET_EVENTS'
+  SET_EVENTS = 'SET_EVENTS',
+  CHANGE_EVENT='CHANGE_EVENT'
+
 
 }
 
@@ -20,9 +24,14 @@ export interface SetGuestAction {
 
 export interface SetEventAction {
   type: EventActionType.SET_EVENTS,
-  payload: IEvent[]
+  payload: IEventRedux[]
 
+}
+
+export interface ChangeEventAction {
+  type:EventActionType.CHANGE_EVENT
 }
 
 export type EventAction =
   SetEventAction | SetGuestAction
+| ChangeEventAction

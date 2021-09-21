@@ -8,7 +8,7 @@
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
     "server": "nodemon server/server.js",
-    "start": "server/server.js"
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "YuraL",
